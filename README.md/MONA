@@ -1,0 +1,82 @@
+# Robot-Arm-Mission:
+
+In this mission will create and simulate robot arm using robot operating system (ROS).
+
+here, I used the website online.
+
+1- create account in the website ( https://www.theconstructsim.com), After that click on "create new project" like the picture in the below:
+![78A33B4F-A569-4810-84F2-881996300203](https://user-images.githubusercontent.com/85816257/124634876-7fc15b80-de8f-11eb-9e86-c91095541cc6.png)
+
+2- at that point as displayed in the image you have begin filling the spaces by picking the version ROS, I used melodic , Then Write the name of my project and described  then, 
+at that point click "create " .
+
+![Screen Shot 2021-07-06 at 6 54 59 PM](https://user-images.githubusercontent.com/85816257/124638704-f52f2b00-de93-11eb-87ed-d8e00dc7bf78.png)
+
+![m3](https://user-images.githubusercontent.com/85816257/124638983-49d2a600-de94-11eb-9456-1296a1e712b0.png)
+
+# Installing the package arduino-robot-arm
+
+Open the "shell web" like the picture in the below:
+
+![m4](https://user-images.githubusercontent.com/85816257/124656643-24509700-deaa-11eb-912d-8a93b9f372ac.png)
+
+Then write command ($ sudo apt install git) to clone the robot arm package from GitHub by using the path, as shown in the picture :
+
+![m5](https://user-images.githubusercontent.com/85816257/124658657-b3f74500-deac-11eb-96ad-d10776dbd4a0.png)
+
+# Install all the dependencies:
+
+To run the packge we need some dependencies like (Movelt, joint state publisher, gazebo ...) so will used this commands :
+
+($ rosdep install --from-paths src --ignore-src -r -y)
+
+($ sudo apt-get install ros-melodic-moveit)
+
+($ sudo apt-get install ros-melodic-joint-state-publisher ros-melodic-joint-state-publisher-gui)
+
+($ sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher)
+
+($ sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control)
+
+![m6](https://user-images.githubusercontent.com/85816257/124660276-ae026380-deae-11eb-8f34-321737cddfe9.png)
+
+![m7](https://user-images.githubusercontent.com/85816257/124660379-cbcfc880-deae-11eb-8725-179b61bee218.png)
+
+# Controlling the motors:
+
+i will run the robot arm packge by using this command :
+($ roslaunch robot_arm_pkg check_motors.launch ) 
+
+![m8](https://user-images.githubusercontent.com/85816257/124664359-fec88b00-deb3-11eb-9571-2880694719dd.png)
+
+the click on graphical tools which will open the window show the simulate arm , as shown in the video in the below:
+
+https://user-images.githubusercontent.com/85816257/124663864-55819500-deb3-11eb-97ac-25948ecc1a01.mov
+
+# Controlling the motors in simulation:
+I used This commands to run the arm simulation on RVis and Gazebo:
+
+($ roslaunch robot_arm_pkg check_motors.launch)
+
+![m10](https://user-images.githubusercontent.com/85816257/124665707-bd38df80-deb5-11eb-9041-3595edc49258.png)
+
+($ roslaunch robot_arm_pkg check_motors_gazebo.launch)
+
+![m11](https://user-images.githubusercontent.com/85816257/124669163-9a5cfa00-deba-11eb-9df8-1fdac0bf52e1.png)
+
+($ rosrun robot_arm_pkg joint_states_to_gazebo.py)
+
+![m12](https://user-images.githubusercontent.com/85816257/124669400-fcb5fa80-deba-11eb-9d84-fe77f4f3a132.png)
+
+![m13](https://user-images.githubusercontent.com/85816257/124669636-659d7280-debb-11eb-9a82-cffc0daf106a.png)
+
+# Movelt in Rvis:
+
+To characterize the situating and developments of the arm will utilizing movelt which is mimic the arm development in various ways
+By Using this command ($ roslaunch moveit_pkg demo.launch), like the pictures in the below:
+
+![m14](https://user-images.githubusercontent.com/85816257/124670662-fa54a000-debc-11eb-99a9-3b19be21aaaf.png)
+
+![m15](https://user-images.githubusercontent.com/85816257/124671856-c9756a80-debe-11eb-8840-e06ff633bf47.png)
+
+
